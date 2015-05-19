@@ -2,6 +2,9 @@
     <h1 id="all_tasks">Current Stuff...</h1>
 
     <% @tasks.each do |task| %>
-        <h3 id="list"><a href="/tasks/<%= task.id %>"><%= task.title %></a></h3>
+      <div id="individual_tasks">
+          <h3 id="list"><a href="/tasks/<%= task.id %>"><%= task.title %></a></h3>
+          <h3 id="edit"><a href="/tasks/<%= task.id %>/edit">Edit</a></h3>
+      </div>
     <% end %>
 </section>

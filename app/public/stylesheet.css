@@ -1,6 +1,7 @@
 body {
-    background: url("http://www.wallpaprz.com/wp-content/uploads/2014/04/go_do_motivational_posters_hd_wallpaper.jpg") no-repeat;
-    background-size: cover;
+    background-color: grey;
+    /*background: url("http://www.wallpaprz.com/wp-content/uploads/2014/04/go_do_motivational_posters_hd_wallpaper.jpg") no-repeat;*/
+    /*background-size: cover;*/
 }
 
 a:link, a:visited {
@@ -40,6 +41,7 @@ a:active {
 }
 
 #task_index {
+    list-style-type: none;
     text-align: center;
     font-size: 24px;
     text-decoration: none;
@@ -47,6 +49,7 @@ a:active {
 }
 
 #new_task {
+    list-style-type: none;
     text-align: center;
     font-size: 24px;
     padding: 10px;
@@ -84,7 +87,7 @@ a:active {
     color: white;
 }
 
-#form {
+#new_form, #edit_form {
     text-align: center;
 }
 
@@ -110,5 +113,14 @@ a:active {
     display: inline-block;
     padding: 15px;
     font-size: 24px;
+}
 
+#edit, #task_edit {
+      text-align: center;
+      list-style-type: none;
+  }
+
+#individual_tasks {
+    padding: 10px;
+    background-color: dimgrey;
 }
