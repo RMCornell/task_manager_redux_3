@@ -5,6 +5,11 @@
       <div id="individual_tasks">
           <h3 id="list"><a href="/tasks/<%= task.id %>"><%= task.title %></a></h3>
           <h3 id="edit"><a href="/tasks/<%= task.id %>/edit">Edit</a></h3>
+
+      <form action="/tasks/<%= task.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="delete"/>
+      </form>
       </div>
     <% end %>
 </section>
