@@ -1,6 +1,15 @@
 <form action="/tasks" method="post">
-  <p>Enter a new task</p>
+  <h1>Enter a New Task</h1>
   <input type="text" name="task[title]"/><br/>
   <textarea name="task[description]"></textarea><br/>
+  <input type="radio" name="task[priority]" value="high">
+  <label>High Priority</label>
+  <br/>
+  <input type="radio" name="task[priority]" value="medium">
+  <label>Medium Priority</label>
+  <br/>
+  <input type="radio" name="task[priority]" value="low">
+  <label>Low Priority</label>
+  <br/>
   <input type="submit"/>
 </form>

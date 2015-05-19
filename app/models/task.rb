@@ -1,11 +1,13 @@
 class Task
   attr_reader :title,
               :description,
-              :id
+              :id,
+              :priority
 
   def initialize(data)
     @id = data['id']
     @title = data['title']
     @description = data['description']
+    @priority = data['priority']
   end
 end
