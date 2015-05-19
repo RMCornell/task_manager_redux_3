@@ -1,15 +1,11 @@
-<form action="/tasks" method="post">
-  <h1>Enter a New Task</h1>
-  <input type="text" name="task[title]"/><br/>
-  <textarea name="task[description]"></textarea><br/>
-  <input type="radio" name="task[priority]" value="high">
-  <label>High Priority</label>
-  <br/>
-  <input type="radio" name="task[priority]" value="medium">
-  <label>Medium Priority</label>
-  <br/>
-  <input type="radio" name="task[priority]" value="low">
-  <label>Low Priority</label>
-  <br/>
-  <input type="submit"/>
-</form>
+<section id="form">
+  <form action="/tasks" method="post">
+    <h1 id="form_title">Enter a New Task</h1>
+    <h3 id="title">Task Title</h3>
+    <input type="text" name="task[title]"/><br/>
+    <h3 id="description">Description</h3>
+    <textarea name="task[description]"></textarea><br/>
+    <br/>
+    <input type="submit"/>
+  </form>
+</section>
