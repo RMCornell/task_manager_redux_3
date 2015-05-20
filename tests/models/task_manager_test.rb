@@ -1,6 +1,6 @@
 require_relative '../test_helper'
 
-class TaskManagerTest < ModelTest
+class TaskManagerTest < MiniTest::Test
   def test_it_creates_a_task
     data = {:title => 'do something',
             :description => 'still doing something'}
@@ -18,12 +18,15 @@ class TaskManagerTest < ModelTest
               :description => 'description one'}
     data2 = { :title => 'task two',
               :description => 'description two'}
+    data3 = { :title       => 'task three',
+              :description => 'description three' }
 
     TaskManager.create(data1)
     TaskManager.create(data2)
+    TaskManager.create(data3)
     all = TaskManager.all
 
-    assert_equal 2, TaskManager.all.count
+    assert_equal 3, TaskManager.all.count
 
     assert_equal 'task one', all[0].title
     assert_equal 'description one', all[0].description

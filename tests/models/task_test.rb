@@ -1,6 +1,6 @@
 require_relative '../test_helper'
 
-class TaskTest < ModelTest
+class TaskTest < MiniTest::Test
   def test_it_assigns_attributes_correctly
     task = Task.new({ "title" => "god",
                       "description" => "the almighty",
