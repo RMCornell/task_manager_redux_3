@@ -11,7 +11,8 @@ a:link, a:visited {
 
 a:hover {
     color: blue;
-    text-decoration: underline;
+    transition: background-color 0.8s ease;
+    background-color: dimgrey;
 }
 
 a:active {
@@ -125,11 +126,19 @@ a:active {
     background-color: dimgrey;
 }
 
+#show_task{
+    text-align: center;
+
+}
+
+
+
 /*  SECTIONS  */
 .section {
     clear: both;
     padding: 0px;
     margin: 0px;
+    background-color: darkgrey;
 }
 
 /*  COLUMN SETUP  */
@@ -161,22 +170,22 @@ a:active {
 /*  GRID OF FOUR  */
 .span_4_of_4 {
     width: 100%;
-    background-color: red;
+    background-color: ;
 }
 
 .span_3_of_4 {
     width: 74.6%;
-    background-color: blue;
+    background-color: ;
 }
 
 .span_2_of_4 {
     width: 49.2%;
-    background-color: green;
+    background-color: ;
 }
 
 .span_1_of_4 {
     width: 23.8%;
-    background-color: yellow;
+    background-color: ;
 
 }
 
@@ -186,7 +195,7 @@ a:active {
         margin: 1% 0 1% 0%;
     }
 
-    .span_1_of_4, .span_2_of_4, .span_3_of_4, .span_4_of_4 {
+.span_1_of_4, .span_2_of_4, .span_3_of_4, .span_4_of_4 {
         width: 100%;
     }
 }
