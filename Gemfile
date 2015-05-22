@@ -5,5 +5,11 @@ gem 'shotgun'
 gem 'minitest'
 gem 'capybara'
 gem 'launchy'
-
-
+gem 'sqlite3'
+gem 'sequel'
+gem 'rake'
+gem 'pry'
+gem 'pry-byebug'
+gem 'pry-toys'
+gem 'pry-theme'
+gem 'database_cleaner'

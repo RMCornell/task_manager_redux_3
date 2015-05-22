@@ -1,12 +1,26 @@
 require_relative '../test_helper'
 
 class TaskManagerTest < MiniTest::Test
+  DatabaseCleaner.strategy = :transaction
+
+  class MiniTest::Spec
+    before :each do
+      DatabaseCleaner.start
+    end
+
+    after :each do
+      DatabaseCleaner.clean
+    end
+  end
+
+
+
   def test_it_creates_a_task
     data = {:title => 'do something',
             :description => 'still doing something'}
 
     TaskManager.create(data)
-    task = TaskManager.find(1)
+    task = TaskManager.find(TaskManager.all.last.id)
 
     assert_equal 'do something', task.title
     assert_equal 'still doing something', task.description
@@ -37,6 +51,7 @@ class TaskManagerTest < MiniTest::Test
   end
 
   def test_it_finds_an_individual_task
+    DatabaseCleaner.start
     data1 = { :title       => 'task one',
               :description => 'description one' }
     data2 = { :title       => 'task two',
@@ -48,11 +63,12 @@ class TaskManagerTest < MiniTest::Test
     TaskManager.create(data2)
     TaskManager.create(data3)
 
-    find = TaskManager.find(3)
+    find = TaskManager.all.last
 
     assert_equal 'task three', find.title
     assert_equal 'description three', find.description
     assert_equal 3, find.id
+    DatabaseCleaner.clean
   end
 
   def test_it_updates_a_task
@@ -67,10 +83,10 @@ class TaskManagerTest < MiniTest::Test
     TaskManager.create(data2)
     TaskManager.create(data3)
 
-    find_task = TaskManager.find(1)
+    find_task = TaskManager.all.last
 
     TaskManager.update(1, data3)
-    find_task = TaskManager.find(1)
+    find_task = TaskManager.all.last
 
     assert_equal "task three", find_task.title
     assert_equal "description three", find_task.description
@@ -95,7 +111,7 @@ class TaskManagerTest < MiniTest::Test
 
     assert_equal 2, TaskManager.all.count
 
-    find_task = TaskManager.find(2)
+    find_task = TaskManager.all.last
 
     assert_equal "task two", find_task.title
     assert_equal "description two", find_task.description

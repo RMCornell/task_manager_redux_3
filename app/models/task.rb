@@ -5,9 +5,8 @@ class Task
               :priority
 
   def initialize(data)
-    @id = data['id']
-    @title = data['title']
-    @description = data['description']
-    @priority = data['priority']
+    @id = data[:id]
+    @title = data[:title]
+    @description = data[:description]
   end
 end

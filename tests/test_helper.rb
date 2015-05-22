@@ -10,9 +10,13 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require 'capybara'
 
+require 'database_cleaner'
+
+DatabaseCleaner.strategy = :truncation
+
 class Minitest::Test
   def teardown
-    TaskManager.delete_all
+    DatabaseCleaner.clean
   end
 end
 
@@ -21,4 +25,5 @@ Capybara.app = TaskManagerApp
 class FeatureTest < Minitest::Test
   include Capybara::DSL
 end
+
 
